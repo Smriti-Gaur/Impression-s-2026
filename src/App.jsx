@@ -32,7 +32,7 @@ const eventsData = [
   { id: 15, name: "Game Dev", event1: "The Hollow Escape", event2: "PS Game Fest", image: "images/gameDev.jpg" },
   { id: 16, name: "Consultancy Club", event1: "Brandscript Ai", image: "images/ConsultingClub.jpg" },
   { id: 17, name: "Expressions", event1: "Canvas Conclave", event2: "Trivia Tints", image: "images/expressions.jpeg" },
-  { id: 18, name: "KPH ", event1: "Knuth Cup", event2: "Code Ne Bana Di Jodi" , image: "images/knuth.png"},
+  { id: 18, name: "KPH ", event1: "Knuth Cup", event2: "Code Ne Bana Di Jodi" , image: "images/Knuth.png"},
   { id: 19, name: "DSC", event1: "Glitchy You or System?", event2: "Decode The Drama" , image: "images/DSC.png"},
   { id: 20, name: "CICE", event1: "Escape Room", event2: "Electric Tambola" , image: "images/CICE.png"},
   { id: 21, name: "UCR", event1: "Grip N' Groove", event2: "RoboSoccer", image: "images/UCR.png" },
@@ -355,13 +355,11 @@ function LandingPage() {
               >
                 <div className="w-1/2 h-full bg-zinc-900 relative overflow-hidden flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-10" />
-                  <img 
-                    src={item.image || "/images/logo1.png"} 
-                    alt={item.name}
-                    loading="lazy"
-                      width="300"
-                      height="200"
-                    className="w-full h-full object-cover md:object-contain"
+                  <LazyLoadImage
+                      src={item.image || "/images/logo1.png"}
+                      alt={item.name}
+                      effect="blur"
+                      className="w-full h-full object-contain"
                   />
                 </div>
 
@@ -437,11 +435,11 @@ function LandingPage() {
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 rounded-2xl" />
 
-            <img 
-              src={img}
-              alt="gallery"
-              loading="lazy"
-              className="w-full h-full object-cover rounded-2xl"
+            <LazyLoadImage
+                src={img}
+                alt="gallery"
+                effect="blur"
+                className="w-full h-full object-cover rounded-2xl"
             />
 
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 rounded-2xl" />
