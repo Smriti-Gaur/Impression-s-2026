@@ -487,7 +487,7 @@ function LandingPage() {
             <p className="text-zinc-400 tracking-[0.2em] uppercase text-xs md:text-sm font-medium drop-shadow-md">Tropical Beats. Endless Memories.</p>
           </div>
           <div className="flex flex-col gap-8 md:items-end">
-            <a href="https://instagram.com/your_handle_here" target="_blank" rel="noreferrer" className="group flex items-center gap-4 text-zinc-400 hover:text-amber-400 transition-colors w-max mx-auto md:mx-0">
+            <a href="https://www.instagram.com/jiit.impressions/" target="_blank" rel="noreferrer" className="group flex items-center gap-4 text-zinc-400 hover:text-amber-400 transition-colors w-max mx-auto md:mx-0">
               <span className="font-mono tracking-widest text-sm drop-shadow-md">@impressions_26</span>
             </a>
           </div>
