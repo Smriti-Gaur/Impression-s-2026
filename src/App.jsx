@@ -193,7 +193,7 @@ function LandingPage() {
           playsInline 
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/src/Images/bg2.mp4" type="video/mp4" />
+          <source src="/images/bg2.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-[#050508]/60" />
       </div>
