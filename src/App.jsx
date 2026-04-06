@@ -77,7 +77,7 @@ const teamData = [
   { id: 7, name: "Shubhanjali Singh", role: "Senior Advisor", image: "src/Images/Heads_photos/Shubhanjali.jpeg" },
   { id: 8, name: "Shivanshu Mishra ", role: "Senior Advisor", image: "src/Images/Heads_photos/Shivanshu.jpeg" },
   { id: 9, name: "Vibhu Chaudhary", role: "Senior Advisor", image: "src/Images/Heads_photos/Vibhu Chaudhary.jpg" },
-  { id: 10, name: "Aditya Pandey", role: "Internal Affairs Head", image: "src/Images/Heads_photos/Aditya.jpg" },
+  { id: 10, name: "Aditya Pandey", role: "Internal Affairs Head", image: "images/Aditya.jpg" },
   { id: 11, name: "Krishna Gupta", role: "Finance Head", image: "src/Images/Heads_photos/KrishnaGupta.JPG" },
   { id: 12, name: "Shubham Rai", role: "Management Head", image: "src/Images/Heads_photos/SHUBHAM RAI.jpg" },
   { id: 13, name: "Vaibhav Suryavanshi", role: "Management Head", image: "src/Images/Heads_photos/vaibhav.jpg" },
