@@ -13,6 +13,8 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 // IMPORT YOUR CLUB PAGE HERE
 import ClubDetails from "./pages/ClubDetails.jsx"; 
 
+
+
 // --- CLUB DATA ARRAY ---
 const eventsData = [
   { id: 1, name: "JYC", event1: "Bridge Wars", event2: "Human Bingo", image: "/images/logo3.png", extraEventsCount: 5 }, 
@@ -154,10 +156,19 @@ const scheduleData = {
   ]
 };
 
+
+
 // ==========================================
 // 1. THIS IS YOUR MAIN LANDING PAGE
 // ==========================================
 function LandingPage() {
+
+  const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
   const navigate = useNavigate(); 
   const pageRef = useRef(null);
   const ringRef = useRef(null);
@@ -185,23 +196,23 @@ function LandingPage() {
   }, []);
 
   // AUTO-SCROLL LOGIC
-  useEffect(() => {
-    if (!scheduleContainerRef.current) return;
+  // useEffect(() => {
+  //   if (!scheduleContainerRef.current) return;
     
-    // Give DOM a tiny fraction of a second to render the newly selected day's items
-    const scrollTimeout = setTimeout(() => {
-      const container = scheduleContainerRef.current;
-      // Find the first event that is marked as 'active' or 'upcoming'
-      const activeOrUpcomingElement = container.querySelector('[data-status="active"], [data-status="upcoming"]');
+  //   // Give DOM a tiny fraction of a second to render the newly selected day's items
+  //   const scrollTimeout = setTimeout(() => {
+  //     const container = scheduleContainerRef.current;
+  //     // Find the first event that is marked as 'active' or 'upcoming'
+  //     const activeOrUpcomingElement = container.querySelector('[data-status="active"], [data-status="upcoming"]');
       
-      if (activeOrUpcomingElement) {
-        // Scroll the container so that element comes to the top smoothly
-        activeOrUpcomingElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 150);
+  //     if (activeOrUpcomingElement) {
+  //       // Scroll the container so that element comes to the top smoothly
+  //       activeOrUpcomingElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //     }
+  //   }, 150);
 
-    return () => clearTimeout(scrollTimeout);
-  }, [activeDay]); // Runs whenever the day tab changes or on first load
+  //   return () => clearTimeout(scrollTimeout);
+  // }, [activeDay]); // Runs whenever the day tab changes or on first load
 
   // Helper to convert "10:00 AM" into total minutes from midnight for easy comparison
   const parseTimeToMinutes = (timeStr) => {
@@ -250,14 +261,39 @@ function LandingPage() {
   }, []);
 
   useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+  const lenis = new Lenis();
+
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
-    return () => lenis.destroy();
-  }, []);
+  }
+
+  requestAnimationFrame(raf);
+
+  // 🔥 FORCE scroll to top using Lenis
+  lenis.scrollTo(0, { immediate: true });
+
+  return () => lenis.destroy();
+}, []);
+
+
+  useEffect(() => {
+  // Disable browser restoring scroll
+  if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+  }
+
+  // Remove any hash from URL
+  if (window.location.hash) {
+    window.history.replaceState(null, null, window.location.pathname);
+  }
+
+  // Force scroll to top AFTER render
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 50);
+
+}, []);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -362,11 +398,25 @@ function LandingPage() {
         </div>
 
         <div className="nav-box-right hidden md:flex gap-8 lg:gap-10 text-xs font-bold tracking-[0.2em] uppercase text-zinc-200 bg-black/60 backdrop-blur-xl px-8 py-4 rounded-2xl border border-white/20 shadow-2xl pointer-events-auto">
-          <a href="#home" className="hover:text-amber-400 transition-all duration-300">Home</a>
-          <a href="#schedule" className="hover:text-amber-400 transition-all duration-300">Schedule</a>
-          <a href="#events" className="hover:text-amber-400 transition-all duration-300">Events</a>
-          <a href="#gallery" className="hover:text-amber-400 transition-all duration-300">Gallery</a>
-          <a href="#team" className="hover:text-amber-400 transition-all duration-300">Team</a>
+          <a onClick={() => scrollToSection("home")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+  Home
+</a>
+
+<a onClick={() => scrollToSection("schedule")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+  Schedule
+</a>
+
+<a onClick={() => scrollToSection("events")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+  Events
+</a>
+
+<a onClick={() => scrollToSection("gallery")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+  Gallery
+</a>
+
+<a onClick={() => scrollToSection("team")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+  Team
+</a>
         </div>
 
         <div className="nav-box-right md:hidden pointer-events-auto">
@@ -383,11 +433,11 @@ function LandingPage() {
 
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[99998] bg-black/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-8 md:hidden pointer-events-auto">
-          <a href="#home" onClick={handleMobileNavClick} className="text-2xl font-black tracking-widest uppercase text-white hover:text-amber-400 transition-colors">Home</a>
-          <a href="#schedule" onClick={handleMobileNavClick} className="text-2xl font-black tracking-widest uppercase text-white hover:text-amber-400 transition-colors">Schedule</a>
-          <a href="#events" onClick={handleMobileNavClick} className="text-2xl font-black tracking-widest uppercase text-white hover:text-amber-400 transition-colors">Events</a>
-          <a href="#gallery" onClick={handleMobileNavClick} className="text-2xl font-black tracking-widest uppercase text-white hover:text-amber-400 transition-colors">Gallery</a>
-          <a href="#team" onClick={handleMobileNavClick} className="text-2xl font-black tracking-widest uppercase text-white hover:text-amber-400 transition-colors">Team</a>
+          <a onClick={() => { scrollToSection("home"); handleMobileNavClick(); }}>Home</a>
+<a onClick={() => { scrollToSection("schedule"); handleMobileNavClick(); }}>Schedule</a>
+<a onClick={() => { scrollToSection("events"); handleMobileNavClick(); }}>Events</a>
+<a onClick={() => { scrollToSection("gallery"); handleMobileNavClick(); }}>Gallery</a>
+<a onClick={() => { scrollToSection("team"); handleMobileNavClick(); }}>Team</a>
         </div>
       )}
 
@@ -418,9 +468,12 @@ function LandingPage() {
             A 2 Day Techno-Cultural Fest – <span className="text-amber-400 font-bold">Tropical Beats</span>
           </p>
 
-          <a href="#events" className="reveal-after-intro mt-10 px-8 py-4 rounded-full border border-red-500/50 bg-black/50 backdrop-blur-md text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-red-900/40 hover:scale-105 hover:border-red-400 hover:drop-shadow-[0_0_20px_rgba(220,38,38,0.6)] transition-all duration-300 translate-y-[20px]">
-            Explore Events
-          </a>
+          <a
+  onClick={() => scrollToSection("events")}
+  className="reveal-after-intro mt-10 px-8 py-4 rounded-full border border-red-500/50 bg-black/50 backdrop-blur-md text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-red-900/40 hover:scale-105 hover:border-red-400 hover:drop-shadow-[0_0_20px_rgba(220,38,38,0.6)] transition-all duration-300 translate-y-[20px] cursor-pointer"
+>
+  Explore Events
+</a>
         </div>
       </section>
 

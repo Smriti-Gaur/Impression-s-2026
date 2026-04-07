@@ -43,7 +43,12 @@ function Index() {
     requestAnimationFrame(raf);
     return () => lenis.destroy();
   }, []);
-
+useEffect(() => {
+  if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+}, []);
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -147,10 +152,17 @@ function Index() {
 
         {/* NAV LINKS (Inside a visible glass box!) */}
         <div className="hidden md:flex gap-8 lg:gap-10 text-xs font-bold tracking-[0.2em] uppercase text-zinc-200 bg-black/60 backdrop-blur-xl px-8 py-4 rounded-2xl border border-white/20 shadow-2xl">
-          <a href="#home" className="hover:text-emerald-400 transition-all duration-300">Home</a>
-          <a href="#schedule" className="hover:text-emerald-400 transition-all duration-300">Schedule</a>
-          <a href="#events" className="hover:text-emerald-400 transition-all duration-300">Events</a>
-          <a href="#gallery" className="hover:text-emerald-400 transition-all duration-300">Gallery</a>
+         <div className="hidden md:flex gap-8 lg:gap-10 text-xs font-bold tracking-[0.2em] uppercase text-zinc-200 bg-black/60 backdrop-blur-xl px-8 py-4 rounded-2xl border border-white/20 shadow-2xl">
+
+  <span onClick={() => scrollToSection("home")} className="cursor-pointer hover:text-emerald-400">Home</span>
+
+  <span onClick={() => scrollToSection("schedule")} className="cursor-pointer hover:text-emerald-400">Schedule</span>
+
+  <span onClick={() => scrollToSection("events")} className="cursor-pointer hover:text-emerald-400">Events</span>
+
+  <span onClick={() => scrollToSection("gallery")} className="cursor-pointer hover:text-emerald-400">Gallery</span>
+
+</div>
         </div>
 
       </nav>
@@ -197,11 +209,11 @@ function Index() {
           </p>
 
           <a 
-            href="#events" 
-            className="reveal-after-intro mt-10 px-8 py-4 rounded-full border border-emerald-500/50 bg-[#050508]/50 backdrop-blur-md text-emerald-400 font-bold tracking-widest uppercase text-sm hover:bg-emerald-500/20 hover:scale-105 hover:border-emerald-400 hover:drop-shadow-[0_0_20px_rgba(52,211,153,0.6)] transition-all duration-300 translate-y-[20px]"
-          >
-            Register Now
-          </a>
+  onClick={() => scrollToSection("events")}
+  className="cursor-pointer reveal-after-intro mt-10 px-8 py-4 rounded-full ..."
+>
+  Register Now
+</a>
         </div>
       </section>
 
