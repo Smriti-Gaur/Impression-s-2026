@@ -186,14 +186,18 @@ function LandingPage() {
       
       {/* GLOBAL FIXED BACKGROUND VIDEO */}
       <div className="fixed inset-0 z-[-2] w-full h-full pointer-events-none">
+
+         <div className="absolute inset-0 bg-[url('/images/bg-fallback.jpg')] bg-cover bg-center" />
         <video 
           autoPlay 
           loop 
           muted 
           playsInline 
+          preload="auto"
+          poster="/images/bg-fallback.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/images/bg2.mp4" type="video/mp4" />
+        <source src="/images/bg2.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-[#050508]/60" />
       </div>
@@ -479,18 +483,70 @@ function LandingPage() {
 
       {/* FOOTER */}
       <footer className="w-full bg-black/80 backdrop-blur-lg pt-24 pb-12 px-6 md:px-12 relative z-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-12 text-center md:text-left">
-          <div className="flex flex-col gap-2 md:gap-4">
-            <h2 className="font-bebas text-5xl md:text-8xl tracking-wide text-white drop-shadow-md">IMPRESSIONS<span className="text-red-500">'26</span></h2>
-            <p className="text-zinc-400 tracking-[0.2em] uppercase text-xs md:text-sm font-medium drop-shadow-md">Tropical Beats. Endless Memories.</p>
-          </div>
-          <div className="flex flex-col gap-8 md:items-end">
-            <a href="https://www.instagram.com/jiit.impressions/" target="_blank" rel="noreferrer" className="group flex items-center gap-4 text-zinc-400 hover:text-amber-400 transition-colors w-max mx-auto md:mx-0">
-              <span className="font-mono tracking-widest text-sm drop-shadow-md">@impressions_26</span>
-            </a>
-          </div>
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-end gap-10 text-center md:text-left">
+    
+    {/* LEFT SIDE */}
+    <div className="flex flex-col gap-2 md:gap-4">
+      <h2 className="font-bebas text-5xl md:text-8xl tracking-wide text-white drop-shadow-md">
+        IMPRESSIONS<span className="text-red-500">'26</span>
+      </h2>
+      <p className="text-zinc-400 tracking-[0.2em] uppercase text-xs md:text-sm font-medium drop-shadow-md">
+        Tropical Beats. Endless Memories.
+      </p>
+    </div>
+
+    {/* RIGHT SIDE */}
+    <div className="flex flex-col gap-6 md:items-end items-center">
+      
+      {/* Instagram */}
+      <a 
+        href="https://www.instagram.com/jiit.impressions/" 
+        target="_blank" 
+        rel="noreferrer" 
+        className="group flex items-center gap-4 text-zinc-400 hover:text-amber-400 transition-colors"
+      >
+        <span className="font-mono tracking-widest text-sm drop-shadow-md">
+          @impressions_26
+        </span>
+      </a>
+
+      {/* 🔥 CREDIT SECTION */}
+      <div className="text-center md:text-right">
+        <p className="text-zinc-500 text-xs tracking-widest uppercase">
+          Developed By
+        </p>
+
+        <div className="flex flex-wrap justify-center md:justify-end gap-2 mt-2">
+
+          {/* Separator */}
+          <span className="text-zinc-600">|</span>
+
+          {/* Name 2 */}
+          <span className="text-amber-400 font-semibold text-sm hover:text-red-400 transition-colors cursor-pointer">
+            Smriti Gaur
+          </span>
+          {/* Separator */}
+          <span className="text-zinc-600">|</span>
+
+          {/* Name 2 */}
+          <span className="text-amber-400 font-semibold text-sm hover:text-red-400 transition-colors cursor-pointer">
+            Mishthi Abrola
+          </span>
+          {/* Separator */}
+          <span className="text-zinc-600">|</span>
+
+          {/* Name 2 */}
+          <span className="text-amber-400 font-semibold text-sm hover:text-red-400 transition-colors cursor-pointer">
+            Aditya Singh
+          </span>
+          
+
         </div>
-      </footer>
+      </div>
+
+    </div>
+  </div>
+</footer>
     </div>
   );
 }

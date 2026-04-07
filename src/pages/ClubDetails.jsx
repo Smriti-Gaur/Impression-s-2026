@@ -541,12 +541,29 @@ const ClubDetails = () => {
       )}
 
       {/* FOOTER */}
-      <footer className="w-full bg-[#030305]/60 backdrop-blur-lg pt-16 pb-8 px-6 md:px-12 border-t border-white/5 mt-auto z-10 relative pointer-events-none">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <h2 className="font-bebas text-4xl tracking-wide text-white drop-shadow-md">IMPRESSIONS<span className="text-red-500">'26</span></h2>
-          <p className="text-zinc-400 text-[10px] tracking-widest uppercase font-medium">© 2026 IMPRESSIONS. All rights reserved.</p>
-        </div>
-      </footer>
+<footer className="w-full bg-[#030305]/60 backdrop-blur-lg pt-16 pb-8 px-6 md:px-12 border-t border-white/5 mt-auto z-10 relative pointer-events-none">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+    
+    {/* Logo */}
+    <h2 className="font-bebas text-4xl tracking-wide text-white drop-shadow-md">
+      IMPRESSIONS<span className="text-red-500">'26</span>
+    </h2>
+
+    {/* Developers */}
+    <div className="text-zinc-400 text-xs tracking-wide">
+      <p className="uppercase text-[10px] mb-1">Developed by</p>
+      <p className="text-white font-medium">
+        Smriti Gaur  •  Mishthi Abrola  •  Aditya Singh
+      </p>
+    </div>
+
+    {/* Copyright */}
+    <p className="text-zinc-400 text-[10px] tracking-widest uppercase font-medium">
+      © 2026 IMPRESSIONS. All rights reserved.
+    </p>
+
+  </div>
+</footer>
 
     </div>
   );
