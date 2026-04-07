@@ -15,16 +15,16 @@ import ClubDetails from "./pages/ClubDetails.jsx";
 
 // --- CLUB DATA ARRAY ---
 const eventsData = [
-  { id: 1, name: "JYC", event1: "Bridge Wars", event2: "Human Bingo", image: "/images/logo3.png" },
+  { id: 1, name: "JYC", event1: "Bridge Wars", event2: "Human Bingo", image: "/images/logo3.png" ,extraEventsCount: 5},
   { id: 2, name: "IEEE", event1: "Carnival Chroniacles 2.0", event2: "The Great College Heist 2.0", image: "images/IEEE.png" },
   { id: 3, name: "Crescendo", event1: "Battle of Bands", event2: "Solo Singing Competition" , image: "images/crescendo.png"},
-  { id: 4, name: "Jhankaar", event1: "Group Dance Competition", event2: "Solo (On The Spot)", image: "images/Jhankaar.png" },
+  { id: 4, name: "Jhankaar", event1: "Group Dance Competition", event2: "Solo (On The Spot)", image: "images/Jhankaar.png",extraEventsCount: 2 },
   { id: 5, name: "The Thespian Circle", event1: "Group Act Competition", event2: "Talent Con" , image: "images/Thespian.png"},
   { id: 6, name: "Finanza", event1: "Island Escape", image: "images/FINANZA.jpg" },
   { id: 7, name: "Radiance", event1: "Mr. & Miss Impressions" , image: "images/Radiace.png"},
   { id: 8, name: "RIBOSE", event1: "The Island Helix", event2: "Tropical Trail", image: "images/RIBOSE.png" },
   { id: 9, name: "Kalakriti", event1: "Design by Heart", image: "images/Kalakriti.png" },
-  { id: 10, name: "JPEG", event1: "Wall Of Frames" , image: "images/JPEG.png"},
+  { id: 10, name: "JPEG", event1: "Wall Of Frames",event2: "Tasveer" , image: "images/JPEG.png"},
   { id: 11, name: "SILICA", event1: "Pitch Up", event2: "MindStorm" , image: "images/Silica.png"},
   { id: 12, name: "GIWM", event1: "QuestX" , image: "images/GIWM.png"},
   { id: 13, name: "DICE", event1: "Reverse Reality", event2: "Tropicrypt" , image: "images/dice.png"},
@@ -40,12 +40,12 @@ const eventsData = [
 
   { id: 23, name: "Yoga, Health and Prahari", event1: "Yoga se hi Hoga", event2: "Tote-ally Zen" , image: "images/Yoga.png"},
   { id: 24, name: "HRUDAY", event1: "The Pirate's Curse" , image: "images/HRUDAY.jpeg"},
-  { id: 25, name: "AI/ML", event1: "Mind Escape 2.0", event2: "images/aimi logo.jpg", image: "images/Aiml.jpg" },
+  { id: 25, name: "AI/ML", event1: "Mind Escape 2.0", event2: "Zodiac of Dammed", image: "images/Aiml.jpg" },
   { id: 26, name: "Ai Tronics", event1: "Digital Escape City", event2: "Think & Blink" , image: "images/ai_tronics.jpeg"},
   { id: 27, name: "Page Turner Society", event1: "Jimmy Jab Games", event2: "Family Feud" , image: "images/PTS.png"},
   { id: 28, name: "Marketing Minds", event1: "BrandVerse", image: "images/MM_Black.png" },
   { id: 29, name: "Umang", event1: "Dimag Ka Dangal" , image: "images/Umang.png"},
-  { id: 30, name: "Parola X Debsoc", event1: "Press Conference", image: "images/Parola.png" },
+  { id: 30, name: "Parola X Debsoc", event1: "Press Conference", event2: "Survival Strategy Challenge",image: "images/Parola.png" },
 ];
 
 
