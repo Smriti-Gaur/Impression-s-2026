@@ -195,25 +195,6 @@ function LandingPage() {
     return () => clearInterval(interval);
   }, []);
 
-  // AUTO-SCROLL LOGIC
-  // useEffect(() => {
-  //   if (!scheduleContainerRef.current) return;
-    
-  //   // Give DOM a tiny fraction of a second to render the newly selected day's items
-  //   const scrollTimeout = setTimeout(() => {
-  //     const container = scheduleContainerRef.current;
-  //     // Find the first event that is marked as 'active' or 'upcoming'
-  //     const activeOrUpcomingElement = container.querySelector('[data-status="active"], [data-status="upcoming"]');
-      
-  //     if (activeOrUpcomingElement) {
-  //       // Scroll the container so that element comes to the top smoothly
-  //       activeOrUpcomingElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  //     }
-  //   }, 150);
-
-  //   return () => clearTimeout(scrollTimeout);
-  // }, [activeDay]); // Runs whenever the day tab changes or on first load
-
   // Helper to convert "10:00 AM" into total minutes from midnight for easy comparison
   const parseTimeToMinutes = (timeStr) => {
     if (!timeStr || timeStr === "EOD") return 24 * 60; // 1440 mins
@@ -399,24 +380,24 @@ function LandingPage() {
 
         <div className="nav-box-right hidden md:flex gap-8 lg:gap-10 text-xs font-bold tracking-[0.2em] uppercase text-zinc-200 bg-black/60 backdrop-blur-xl px-8 py-4 rounded-2xl border border-white/20 shadow-2xl pointer-events-auto">
           <a onClick={() => scrollToSection("home")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
-  Home
-</a>
+             Home
+        </a>
 
-<a onClick={() => scrollToSection("schedule")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
-  Schedule
-</a>
+        <a onClick={() => scrollToSection("schedule")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+            Schedule
+        </a>
 
-<a onClick={() => scrollToSection("events")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
-  Events
-</a>
+        <a onClick={() => scrollToSection("events")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+           Events
+        </a>
 
-<a onClick={() => scrollToSection("gallery")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
-  Gallery
-</a>
+        <a onClick={() => scrollToSection("gallery")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+          Gallery
+        </a>
 
-<a onClick={() => scrollToSection("team")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
-  Team
-</a>
+        <a onClick={() => scrollToSection("team")} className="hover:text-amber-400 transition-all duration-300 cursor-pointer">
+          Team
+        </a>
         </div>
 
         <div className="nav-box-right md:hidden pointer-events-auto">
@@ -434,10 +415,10 @@ function LandingPage() {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[99998] bg-black/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-8 md:hidden pointer-events-auto">
           <a onClick={() => { scrollToSection("home"); handleMobileNavClick(); }}>Home</a>
-<a onClick={() => { scrollToSection("schedule"); handleMobileNavClick(); }}>Schedule</a>
-<a onClick={() => { scrollToSection("events"); handleMobileNavClick(); }}>Events</a>
-<a onClick={() => { scrollToSection("gallery"); handleMobileNavClick(); }}>Gallery</a>
-<a onClick={() => { scrollToSection("team"); handleMobileNavClick(); }}>Team</a>
+        <a onClick={() => { scrollToSection("schedule"); handleMobileNavClick(); }}>Schedule</a>
+        <a onClick={() => { scrollToSection("events"); handleMobileNavClick(); }}>Events</a>
+        <a onClick={() => { scrollToSection("gallery"); handleMobileNavClick(); }}>Gallery</a>
+        <a onClick={() => { scrollToSection("team"); handleMobileNavClick(); }}>Team</a>
         </div>
       )}
 
@@ -469,9 +450,9 @@ function LandingPage() {
           </p>
 
           <a
-  onClick={() => scrollToSection("events")}
-  className="reveal-after-intro mt-10 px-8 py-4 rounded-full border border-red-500/50 bg-black/50 backdrop-blur-md text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-red-900/40 hover:scale-105 hover:border-red-400 hover:drop-shadow-[0_0_20px_rgba(220,38,38,0.6)] transition-all duration-300 translate-y-[20px] cursor-pointer"
->
+            onClick={() => scrollToSection("events")}
+            className="reveal-after-intro mt-10 px-8 py-4 rounded-full border border-red-500/50 bg-black/50 backdrop-blur-md text-amber-400 font-bold tracking-widest uppercase text-sm hover:bg-red-900/40 hover:scale-105 hover:border-red-400 hover:drop-shadow-[0_0_20px_rgba(220,38,38,0.6)] transition-all duration-300 translate-y-[20px] cursor-pointer"
+          >
   Explore Events
 </a>
         </div>
