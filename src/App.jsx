@@ -340,7 +340,7 @@ function LandingPage() {
           poster="/images/bg-fallback.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-        <source src="/images/BG_c.mp4" type="video/mp4" />
+        <source src="/images/]BG_c.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-[#050508]/60" />
       </div>

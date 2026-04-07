@@ -192,7 +192,7 @@ const clubsDatabase = {
     description: "Promotes physical fitness, mental well-being, and a healthy lifestyle through various wellness activities and awareness programs.",
     events: [
       { id: '2401', title: "Yoga se hi Hoga", description: "An engaging and energetic event where students participate in a series of exciting yoga pose challenges.", rules: ["Perform yoga poses correctly within a given time."], coordinators: [], gformLink: "https://docs.google.com/forms/d/e/1FAIpQLSfCV3yOzGnsNFwNpUCLQPVhUbTyedmR9eOillp5_aVsCnSvDw/viewform?usp=publish-editor" },
-      { id: '2402', title: "Tote-ally Zen", description: "A fun and creative event where students design and decorate tote bags using painting colors.", rules: [], coordinators: [], gformLink: "https://docs.google.com/forms/d/e/1FAIpQLSfCV3yOzGnsNFwNpUCLQPVhUbTyedmR9eOillp5_aVsCnSvDw/viewform?usp=publish-editor" }
+      { id: '2402', title: "Tote-ally Zen", description: "A fun and creative event where students design and decorate tote bags using painting colors.", rules: [], coordinators: [{name:" Neha Sharma 3", phone: "85958 4279" }, { name: "Kashish Srivastava", phone: " 8178951023" }], gformLink: "https://docs.google.com/forms/d/e/1FAIpQLSfCV3yOzGnsNFwNpUCLQPVhUbTyedmR9eOillp5_aVsCnSvDw/viewform?usp=publish-editor" }
     ]
   },
   "24": { 
