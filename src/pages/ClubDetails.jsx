@@ -553,7 +553,7 @@ const ClubDetails = () => {
     <div className="text-zinc-400 text-xs tracking-wide">
       <p className="uppercase text-[10px] mb-1">Developed by</p>
       <p className="text-white font-medium">
-        Smriti Gaur  •  Mishthi Abrola  •  Aditya Singh
+        Smriti Gaur  •  Mishthi Abrola  •  Aditya Singh   •  Abeer Sharma
       </p>
     </div>
 

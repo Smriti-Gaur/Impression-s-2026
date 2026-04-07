@@ -340,7 +340,7 @@ function LandingPage() {
           poster="/images/bg-fallback.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-        <source src="/images/bg2.mp4" type="video/mp4" />
+        <source src="/images/BG_c.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-[#050508]/60" />
       </div>
@@ -753,7 +753,7 @@ function LandingPage() {
 
           {/* Name 2 */}
           <span className="text-amber-400 font-semibold text-sm hover:text-red-400 transition-colors cursor-pointer">
-            Mishthi Abrola
+            Mishthi Abrol
           </span>
           {/* Separator */}
           <span className="text-zinc-600">|</span>
@@ -761,6 +761,12 @@ function LandingPage() {
           {/* Name 2 */}
           <span className="text-amber-400 font-semibold text-sm hover:text-red-400 transition-colors cursor-pointer">
             Aditya Singh
+          </span>
+          {/* Separator */}
+          <span className="text-zinc-600">|</span>
+          {/* Name 2 */}
+          <span className="text-amber-400 font-semibold text-sm hover:text-red-400 transition-colors cursor-pointer">
+            Abeer Sharma
           </span>
           
 
