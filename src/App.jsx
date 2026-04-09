@@ -78,7 +78,7 @@ const teamData = [
   { id: 20, name: "Eshita Singh", role: "Content Head", image: "/images/eshita.jpg" },
   { id: 21, name: "Akarsh Jain", role: "PR Head", image: "/images/Akarsh.jpeg" },
   { id: 22, name: "Harshit Yadav", role: "BBA Head", image: "/images/Harshit.jpg" },
-  { id: 23, name: "Madhav Agrawal", role: "Hospitality Head", image: "/images/madhav.png" }
+  { id: 23, name: "Madhav Agarwal", role: "Hospitality Head", image: "/images/Madhavv.jpeg" }
 ];
 
 // 🌟 THE FULL CSV SCHEDULE DATA 🌟
@@ -338,7 +338,8 @@ function LandingPage() {
           playsInline 
           preload="auto"
           poster="/images/bg-fallback.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-ful
+          l object-cover"
         >
         <source src="/images/]BG_c.mp4" type="video/mp4" />
         </video>
